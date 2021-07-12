@@ -1,0 +1,19 @@
+<!-- Medication elements -->
+<div class="medication" *ngFor="let medication of medications" style="position: relative">
+  <div class="medication-text">
+    <p>{{ medication.intakeHour }}:<span *ngIf="medication.intakeMinutes<10">0</span>{{ medication.intakeMinutes }} - {{ medication.title }}</p>
+  </div>
+  <div class="medication-buttons">
+    <button class="button" (click)="onTakeMedication(medication)" title="Take medication" style="margin-left: 5px; background-color: #58CD36;">
+      <i class="fas fa-check" style="color: white;"></i>
+    </button>
+    <button class="button" [routerLink]="['./edit-medication', medication._id]" title="Edit medication" style="margin-left: 5px;">
+      <i class="fas fa-pen"></i>
+      
+    </button>
+
+    <button class="button is-danger" (click)="onMedicationDeleteCick(medication._id)" title="Delete medication" style="margin-left: 5px;">
+      <i class="fas fa-trash-alt"></i>
+    </button>
+  </div>
+</div>

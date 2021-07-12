@@ -1,0 +1,25 @@
+<ion-app>
+    <ion-header [translucent]="true">
+      <ion-toolbar>
+        <div style="display: flex; justify-content: space-between">
+        
+          <p class="appName">
+            MedTracker <i class="fas fa-heartbeat fa-lg"  style="color: #C4BCF3"></i>
+          </p>
+
+          <section id="info" class="notifications" style="display: none;">
+            <p class="notification-message" id="successBox">Message...</p>
+          </section>
+          
+  
+          <button *ngIf="router.url !== '/login' && router.url !== '/register'" class="button" style="margin-right: 20px;" (click)="onLogoutButtonClicked()">Logout</button>
+        </div>
+      </ion-toolbar>
+    </ion-header>
+
+    <ion-router-outlet></ion-router-outlet>
+
+    <!-- <app-tabs></app-tabs> -->
+
+    <!-- <app-explore-container name="Tab 2 page"></app-explore-container> -->
+</ion-app>
