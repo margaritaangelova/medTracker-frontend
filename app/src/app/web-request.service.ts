@@ -9,10 +9,14 @@ import { Injectable } from '@angular/core';
 export class WebRequestService {
 
   readonly ROOT_URL;
+  port = process.env.PORT || '3000'
 
   constructor(private http: HttpClient) {
     // this.ROOT_URL = 'http://localhost:3000';
-    this.ROOT_URL = 'http://10.0.2.2:3000';
+    // this.ROOT_URL = 'http://10.0.2.2:3000';
+    // this.ROOT_URL = process.env.NODE_ENV;
+    this.ROOT_URL = 'https://med-tracker-frontend.herokuapp.com/';
+
    }
 
   get(uri: string) {
