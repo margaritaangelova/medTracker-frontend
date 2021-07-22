@@ -9,7 +9,6 @@ import { Injectable } from '@angular/core';
 export class WebRequestService {
 
   readonly ROOT_URL;
-  port = process.env.PORT || '3000'
 
   constructor(private http: HttpClient) {
     // this.ROOT_URL = 'http://localhost:3000';
